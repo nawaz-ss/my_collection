@@ -12,8 +12,9 @@ function Mapbox() {
         height: '100vh',
         latitude: 45.4211,
         longitude: -75.6903,
-        zoom: 10
-
+        zoom: 10,
+        bearing: 0,
+        pitch: 0
     })
     const [selectedPark, setSelectedPark] = useState(null)
 
@@ -31,7 +32,7 @@ function Mapbox() {
     }, [])
 
     return (
-        <div>
+        <div className=''>
             <ReactMapGL
                 {...viewport}
                 mapboxApiAccessToken={accessToken}
@@ -47,7 +48,6 @@ function Mapbox() {
                         longitude={park.geometry.coordinates[0]}
                     >
                         <MdSkateboarding className='react-icon' onClick={e => {
-                            console.log('click!!')
                             e.preventDefault()
                             setSelectedPark(park)
                         }} />

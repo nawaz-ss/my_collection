@@ -1,0 +1,8 @@
+.header .nav-link{
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.header .active{
+    color: #0d6efd
+}
